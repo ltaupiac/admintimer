@@ -1,23 +1,17 @@
 SPOON_NAME := "AdminTimer.spoon"
-ZIP_NAME := "Spoons/AdminTimer.spoon.zip"
-TMP_DIR := "build_tmp"
-SOURCES := "Sources"
 
 default:
     just --summary
 
 clean:
-    @echo "Cleaning old archive"
-    @rm -f {{ZIP_NAME}}
-    @rm -rf {{TMP_DIR}}
+    @echo "🧹 Suppression de l'archive précédente"
+    @rm -f Spoons/{{SPOON_NAME}}.zip
 
 zip: clean
-    @echo "→ Création de l'archive {{ZIP_NAME}}..."
-    @mkdir -p {{TMP_DIR}}/{{SPOON_NAME}}
-    @cp {{SOURCES}}/init.lua {{SOURCES}}/SpoonManifest.lua {{TMP_DIR}}/{{SPOON_NAME}}/
-    @cd {{TMP_DIR}} && zip -r ../{{ZIP_NAME}} {{SPOON_NAME}} > /dev/null
-    @rm -rf {{TMP_DIR}}
-    @echo "✅ Archive prête : {{ZIP_NAME}}"
+    @echo "📦 Création de l'archive Spoons/{{SPOON_NAME}}.zip depuis Sources/{{SPOON_NAME}}..."
+    @mkdir -p Spoons
+    @cd Sources/{{SPOON_NAME}} && zip -r ../../Spoons/{{SPOON_NAME}}.zip * > /dev/null
+    @echo "✅ Archive créée : Spoons/{{SPOON_NAME}}.zip"
 
 check:
-    @unzip -l {{ZIP_NAME}}
+    @unzip -l Spoons/{{SPOON_NAME}}.zip
