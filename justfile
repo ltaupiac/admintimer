@@ -10,7 +10,7 @@ clean:
 zip: clean
     @echo "📦 Création de l'archive Spoons/{{SPOON_NAME}}.zip depuis Sources/{{SPOON_NAME}}..."
     @mkdir -p Spoons
-    @cd Sources/{{SPOON_NAME}} && zip -r ../../Spoons/{{SPOON_NAME}}.zip * > /dev/null
+    @cd Sources/ && zip -r ../Spoons/{{SPOON_NAME}}.zip {{SPOON_NAME}} > /dev/null
     @echo "✅ Archive créée : Spoons/{{SPOON_NAME}}.zip"
 
 check:
