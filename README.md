@@ -10,17 +10,38 @@ A Hammerspoon Spoon that shows the current admin status of the user (👤 / ⭐�
 - Admin mode timeout tracked with local file timestamp
 - Automatically exits admin mode after 4h (or configurable)
 
-## Installation
+## Manual installation 
 
-1. Clone this repo into your Spoons directory:
+1. get the spoon and unzip
 
 ```bash
-git clone https://github.com/ltaupiac/AdminTimer.spoon ~/.hammerspoon/Spoons/AdminTimer.spoon
+curl -L https://github.com/ltaupiac/AdminTimer/raw/refs/heads/main/Spoons/AdminTimer.spoon.zip -o /tmp/AdminTimer.zip
+unzip -o /tmp/AdminTimer.zip -d ~/.hammerspoon/Spoons/
+```
+2. Config init.lua
+```lua
+hs.spoons.use("AdminTimer")
+spoon.AdminTimer:start()
 ```
 
-## Configuration
+## Configuration with SpoonInstall
 
+1. Config init.lua
 ```lua
-hs.loadSpoon("AdminTimer")
-spoon.AdminTimer:start()
+hs.loadSpoon("SpoonInstall")
+Install = spoon.SpoonInstall
+
+-- Register the repository
+Install.repos["AdminTimer"] = {
+  desc = "AdminTimer.spoon repository",
+  url = "https://github.com/ltaupiac/admintimer"
+}
+
+-- Download, load, configure and start:
+Install:andUse("AdminTimer",
+    {
+        repo = "AdminTimer",
+        start = true,
+    }
+)
 ```
