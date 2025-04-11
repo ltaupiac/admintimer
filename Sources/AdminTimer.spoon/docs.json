@@ -1,1 +1,11 @@
-[{}]
+[
+  {
+    "name": "AdminTimer",
+    "version": "1.0",
+    "author": "Laurent Taupiac",
+    "homepage": "https://github.com/ltaupiac/admintimer",
+    "license": "MIT",
+    "description": "Spoon to manage temporary admin privileges with timer.",
+    "url": "https://github.com/ltaupiac/admintimer/raw/main/Spoons/AdminTimer.spoon.zip"
+  }
+]

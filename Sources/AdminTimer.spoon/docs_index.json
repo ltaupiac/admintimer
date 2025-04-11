@@ -1,1 +1,8 @@
-[{}]
+[
+  {
+    "name": "AdminTimer",
+    "desc": "Spoon to manage temporary admin privileges with timer.",
+    "author": "Laurent Taupiac",
+    "version": "1.0"
+  }
+]
