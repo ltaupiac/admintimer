@@ -45,7 +45,7 @@ local function updateMenu()
             else
                 local h = math.floor(remaining / 3600)
                 local m = math.floor((remaining % 3600) / 60)
-                icon = string.format("⭐️ %d0:%02d", h, m)
+                icon = string.format("⭐️ %d:%02d", h, m)
             end
         else
             icon = "⭐️"
